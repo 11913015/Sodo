@@ -27,6 +27,7 @@ class SodoGrid extends JFrame {
         txtGame = new JTextField[9][3][3];
         gridInit();
     }
+package  project;
 
     public void gridInit() {
         Container container = this.getContentPane();
@@ -171,32 +172,7 @@ class SodoGrid extends JFrame {
         container.add(jllHintNum);
 
         //todo//创建文本区域
-        for (int i = 0; i < 9; i++) {
-            pnlGame[i] = new JPanel();
-            pnlGame[i].setBorder(BorderFactory.createLineBorder(Color.black, 2));
-            pnlGame[i].setLayout(new GridLayout(3, 3));
-            pnlGame[i].setSize(225, 225);
-            if (i == 0) {
-                pnlGame[i].setLocation(0, 0);
-            } else if (i == 1) {
-                pnlGame[i].setLocation(225, 0);
-            } else if (i == 2) {
-                pnlGame[i].setLocation(450, 0);
-            } else if (i == 3) {
-                pnlGame[i].setLocation(0, 225);
-            } else if (i == 4) {
-                pnlGame[i].setLocation(225, 225);
-            } else if (i == 5) {
-                pnlGame[i].setLocation(450, 225);
-            } else if (i == 6) {
-                pnlGame[i].setLocation(0, 450);
-            } else if (i == 7) {
-                pnlGame[i].setLocation(225, 450);
-            } else if (i == 8) {
-                pnlGame[i].setLocation(450, 450);
-            }
-            container.add(pnlGame[i]);
-        }
+      
 
         for (int z = 0; z < 9; z++) {
             for (int x = 0; x < 3; x++) {
@@ -217,6 +193,12 @@ class SodoGrid extends JFrame {
                 }
             }
         }
+ public void end() {
+        JFrame frameJudge = new JFrame("Winning or Losing");
+        frameJudge.setSize(600, 100);
+        JPanel jpJudge = new JPanel();
+        JLabel labelWin = new JLabel();
+        JLabel labelLose = new JLabel();
 
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
